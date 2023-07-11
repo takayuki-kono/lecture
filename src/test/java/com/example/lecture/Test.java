@@ -96,7 +96,6 @@ public class Test {
         //・Pomeranianクラスは毛の本数をパラメータにもつコンストラクタを定義する（Dogのhear変数に代入）
         //・Animal interface にcryメソッドを定義する(非static)
         //new BlackCat();
-
     }
 
 }
