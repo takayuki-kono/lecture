@@ -2,9 +2,7 @@ package com.example.lecture;
 
 import org.springframework.boot.SpringApplication;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 import static java.lang.String.valueOf;
 
@@ -56,7 +54,40 @@ public class Test {
         sb.toString();
 
     }
-    public void test_20230710(){
+
+    public void test_20230720() {
+        List<Cat> list = new ArrayList<>();
+//        list.add(new Cat("a"));
+//        list.add(new Cat("b"));
+        List<String> o = new ArrayList<>();
+        HashSet<String> l = new HashSet<>();
+        for(Cat m : list){
+            if(o.contains(m.getName())){
+                o.add(m.getName());
+                m.getName();
+            }
+            if(l.add(m.getName())){
+            }
+        }
+        Map<String, Cat> catMap = new HashMap<>();
+//        catMap.put("a", new Cat("a"));
+        for(Map.Entry<String, Cat> m : catMap.entrySet()){
+            m.getKey();
+//            catMap.get(m.getKey());
+            m.getValue();
+        }
+        LinkedList<String> list2 = new LinkedList<>();
+    }
+    public void kadai_20230720() {
+        // Mapに下記のペアで格納する
+        //・"sazae"/Catオブジェクトのname"tama"/color"yellow"
+        //・"doraemon"/Catオブジェクトのname"me"/color"white"
+        //・"kiteretu"/Catオブジェクトのname"korosuke"/color"yellow"
+        // Mapに順序処理をかける（格納した順）
+        //colorが重複しないように格納した順にvalueのCatオブジェクトのcallメソッドを呼び、"tama""me"の順で出力させる
+
+    }
+        public void test_20230710(){
         //20230710
         //クラスのインスタンスを生成してください
         class Dog implements Animal {
