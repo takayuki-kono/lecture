@@ -6,6 +6,7 @@ import lombok.Data;
 public class Cat implements Animal{
 
     public String name;
+    public String color;
 
     private Status status;
     private Status2 status2;
@@ -27,8 +28,9 @@ public class Cat implements Animal{
 
 
     }
-    public Cat(String name){
+    public Cat(String name, String color){
         this.name = name;
+        this.color = color;
     }
 
 //    public Cat(String name){
@@ -42,7 +44,13 @@ public class Cat implements Animal{
     @Override
     public void cry() {
 //        super.
-//        System.out.println("mew");
+//        System.out.println(voice);
+
+    }
+
+    public void call() {
+//        super.
+        System.out.println(name);
 
     }
 
