@@ -41,12 +41,12 @@ public class Cat implements Animal{
 //    }
 
 
-//    @Override
-//    public void cry() {
-////        super.
+    @Override
+    public void cry() {
+//        super.
 //        System.out.println(voice);
-//
-//    }
+
+    }
 
     public void call() {
 //        super.
