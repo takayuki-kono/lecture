@@ -66,14 +66,7 @@ public class Test {
         }
     }
 
-    public void kadai_20230724() {
-        //0か1のランダム数を定義
-        //ランダム変数で1を割る
-        //（数回実行して、エラーが投げられた場合、"無限"を出力）
-    }
-
-
-        public void test_20230719(){
+    public void test_20230719(){
         String a = "b";
 //        String b = "b";
         String b = "b@";
@@ -149,6 +142,11 @@ public class Test {
         public void test_20230710(){
         //20230710
         //クラスのインスタンスを生成してください
+        //条件
+        //・Animal interfaceを実装したクラスDogを継承したPomeranianクラス
+        //・Dogクラスは毛の本数と犬種をパラメータにもつコンストラクタを定義する（Dogのhear / kindOfDog変数に代入）
+        //・Pomeranianクラスは毛の本数をパラメータにもつコンストラクタを定義する（Dogのhear変数に代入）
+        //・Animal interface にcryメソッドを定義する(非static)
         class Dog implements Animal {
             int hear;
             String kindOfDog;
@@ -180,11 +178,6 @@ public class Test {
                 };
             }
         }
-        //条件
-        //・Animal interfaceを実装したクラスDogを継承したPomeranianクラス
-        //・Dogクラスは毛の本数と犬種をパラメータにもつコンストラクタを定義する（Dogのhear / kindOfDog変数に代入）
-        //・Pomeranianクラスは毛の本数をパラメータにもつコンストラクタを定義する（Dogのhear変数に代入）
-        //・Animal interface にcryメソッドを定義する(非static)
         //new BlackCat();
     }
 

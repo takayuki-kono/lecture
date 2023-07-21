@@ -4,8 +4,8 @@ public class BlackCat extends Cat{
     String name;
 
     public BlackCat(){
-        super("meme");
-        //super();
+        super("meme","Black");
+//        super();
 //        name = "a";
 //        super();
 //        super.get
