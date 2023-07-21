@@ -134,6 +134,7 @@ public class Test {
         //・Dogクラスは毛の本数と犬種をパラメータにもつコンストラクタを定義する（Dogのhear / kindOfDog変数に代入）
         //・Pomeranianクラスは毛の本数をパラメータにもつコンストラクタを定義する（Dogのhear変数に代入）
         //・Animal interface にcryメソッドを定義する(非static)
+        //new BlackCat();
         class Dog implements Animal {
             int hear;
             String kindOfDog;
