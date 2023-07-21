@@ -8,26 +8,24 @@ public class Cat implements Animal{
     public String name;
     public String color;
 
-    private Status status;
-    private Status2 status2;
-
-    @Data
-    protected class Status{
-        int life = 100;
+//    private Status status;
+//    private Status2 status2;
+//
+//    @Data
+//    protected class Status{
+//        int life = 100;
+////        String name;
+//    }
+//
+//    @Data
+//    protected class Status2{
+//        int life;
 //        String name;
-    }
-
-    @Data
-    protected class Status2{
-        int life;
-        String name;
-
-        Status2(){
-            this.life = status.getLife();
-        }
-
-
-    }
+//
+//        Status2(){
+//            this.life = status.getLife();
+//        }
+//    }
     public Cat(String name, String color){
         this.name = name;
         this.color = color;

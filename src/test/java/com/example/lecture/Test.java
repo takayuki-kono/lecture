@@ -11,7 +11,8 @@ public class Test {
     public static void main(String[] args) {
         Test test = new Test();
 //        test.test_20230710();
-        test.test_20230719();
+//        test.test_20230719();
+        test.kadai_20230720();
     }
 
     public void test_20230719(){
@@ -78,6 +79,7 @@ public class Test {
         }
         LinkedList<String> list2 = new LinkedList<>();
     }
+
     public void kadai_20230720() {
         // Mapに下記のペアで格納する
         //・"sazae"/Catオブジェクトのname"tama"/color"yellow"
@@ -86,10 +88,52 @@ public class Test {
         // Mapに順序処理をかける（格納した順）
         //colorが重複しないように格納した順にvalueのCatオブジェクトのcallメソッドを呼び、"tama""me"の順で出力させる
 
+        //Mapに順序処理をかけるためにLinkedHashMapを使用
+        Map<String, Cat> map = new LinkedHashMap<>();
+        map.put("sazae", new Cat("tama", "yellow"));
+        map.put("doraemon", new Cat("me","white"));
+        map.put("kiteretu", new Cat("korosuke","yellow"));
+
+        //重複を許さず、順番も守るsetを作成
+        //最初は
+        //Set set = new LinkedHashSet();
+        //for(Map.Entry<String, Cat> m : map.entrySet()){
+        //    set.add(m.getValue());
+        //}
+        //で作っていたが、初期化の際にまとめて定義できるらしい
+        Set<Cat> set = new LinkedHashSet<>(map.values());
+        //ただし、これだとvalueはname, colorの2つの要素を持つため、"tama"と"korosuke"は重複していないとみなされる
+        //かといって、colorだけを格納したsetを作っても、name情報がないのでcall()メソッドで出力できない
+
+//        Catクラスにequals()メソッドとhashCode()メソッドをオーバーライドしてcolorの値を元に重複を判定できる（GPT談）
+//        @Override
+//        public boolean equals(Object o) {
+//            if (this == o) return true;
+//            if (o == null || getClass() != o.getClass()) return false;
+//            Cat cat = (Cat) o;
+//            return Objects.equals(color, cat.color);
+//        }
+//
+//        @Override
+//        public int hashCode() {
+//            return Objects.hash(color);
+//        }
+
+        //callメソッドで出力
+        //現状3匹全部出ちゃう
+        for(Cat cat : set){
+            cat.call();
+        }
     }
-        public void test_20230710(){
+
+    public void test_20230710(){
         //20230710
         //クラスのインスタンスを生成してください
+        //条件
+        //・Animal interfaceを実装したクラスDogを継承したPomeranianクラス
+        //・Dogクラスは毛の本数と犬種をパラメータにもつコンストラクタを定義する（Dogのhear / kindOfDog変数に代入）
+        //・Pomeranianクラスは毛の本数をパラメータにもつコンストラクタを定義する（Dogのhear変数に代入）
+        //・Animal interface にcryメソッドを定義する(非static)
         class Dog implements Animal {
             int hear;
             String kindOfDog;
@@ -121,11 +165,6 @@ public class Test {
                 };
             }
         }
-        //条件
-        //・Animal interfaceを実装したクラスDogを継承したPomeranianクラス
-        //・Dogクラスは毛の本数と犬種をパラメータにもつコンストラクタを定義する（Dogのhear / kindOfDog変数に代入）
-        //・Pomeranianクラスは毛の本数をパラメータにもつコンストラクタを定義する（Dogのhear変数に代入）
-        //・Animal interface にcryメソッドを定義する(非static)
         //new BlackCat();
     }
 
