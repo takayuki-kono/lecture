@@ -8,10 +8,18 @@ import static java.lang.String.valueOf;
 
 public class Test {
 
+    public void kadai_20230724() {
+        //0か1のランダム数を定義
+        //ランダム変数で1を割る
+        //（数回実行して、エラーが投げられた場合、"無限"を出力）
+    }
+
+
     public static void main(String[] args) {
         Test test = new Test();
-//        test.test_20230710();
-        test.test_20230719();
+////        test.test_20230710();
+//        test.test_20230719();
+        test.kadai_20230724();
     }
 
     public void test_20230719(){
