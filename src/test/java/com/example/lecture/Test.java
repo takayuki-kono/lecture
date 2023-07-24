@@ -12,7 +12,7 @@ public class Test {
         Test test = new Test();
 //        test.test_20230710();
 //        test.test_20230719();
-        test.kadai_20230720();
+//        test.kadai_20230720();
     }
 
     public void test_20230719(){
@@ -90,18 +90,29 @@ public class Test {
 
         //Mapに順序処理をかけるためにLinkedHashMapを使用
         Map<String, Cat> map = new LinkedHashMap<>();
-        map.put("sazae", new Cat("tama", "yellow"));
-        map.put("doraemon", new Cat("me","white"));
-        map.put("kiteretu", new Cat("korosuke","yellow"));
+        map.put("sazae", new Cat("tama", "yellow")); //aのインスタンス
+        map.put("doraemon", new Cat("me","white")); //bインスタンス
+        map.put("kiteretu", new Cat("korosuke","yellow")); //cインスタンス
 
         //重複を許さず、順番も守るsetを作成
         //最初は
-        //Set set = new LinkedHashSet();
-        //for(Map.Entry<String, Cat> m : map.entrySet()){
-        //    set.add(m.getValue());
-        //}
+        Set<String> set = new LinkedHashSet();
+        //Set<Cat> catset = new LinkedHashSet();
+        for(Map.Entry<String, Cat> m : map.entrySet()){
+            if(set.add(m.getValue().getColor())){
+                //これをifの条件とし、cat.call()を呼ぶ
+                //あくまで条件式としてなので、nameは別に代入してやる
+                //catset.add(m.getValue());
+                // ::
+                // これだとcallが呼びたいnameが定義されていない、catsetに対してcallを呼びたい
+                m.getValue().call();
+                // 新規にインスタンスを作成して、値を代入する必要はない
+                // 単純にforで入力されている内容を出力すればよい
+                // また、call()メソッドをstaticにすると、name参照できなくなるため注意
+            }
+        }
         //で作っていたが、初期化の際にまとめて定義できるらしい
-        Set<Cat> set = new LinkedHashSet<>(map.values());
+        //Set<Cat> set = new LinkedHashSet<>(map.values());
         //ただし、これだとvalueはname, colorの2つの要素を持つため、"tama"と"korosuke"は重複していないとみなされる
         //かといって、colorだけを格納したsetを作っても、name情報がないのでcall()メソッドで出力できない
 
@@ -119,11 +130,10 @@ public class Test {
 //            return Objects.hash(color);
 //        }
 
-        //callメソッドで出力
-        //現状3匹全部出ちゃう
-        for(Cat cat : set){
-            cat.call();
-        }
+//        callメソッドで出力
+//        for(Cat cat : catset){
+//            cat.call();
+//        }
     }
 
     public void test_20230710(){
