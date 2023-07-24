@@ -8,11 +8,29 @@ import static java.lang.String.valueOf;
 
 public class Test {
 
+    public void kadai_20230724() {
+        try {
+            while (true) {
+                //0か1のランダム数を定義
+                Random rand = new Random();
+                int num = rand.nextInt(2);
+                //ランダム変数で1を割る, 結果を出力する
+                num = 1 / num;
+                System.out.println(num);
+            }
+        } catch(ArithmeticException e){
+            //（数回実行して、エラーが投げられた場合、"無限"を出力）
+            System.out.println("無限");
+        }
+    }
+
+
     public static void main(String[] args) {
         Test test = new Test();
 //        test.test_20230710();
 //        test.test_20230719();
 //        test.kadai_20230720();
+        test.kadai_20230724();
     }
 
     public void test_20230719(){
