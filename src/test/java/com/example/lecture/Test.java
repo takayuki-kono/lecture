@@ -14,56 +14,22 @@ public class Test {
 //        test.test_20230719();
 //        test.kadai_20230720();
 //        test.kadai_20230724();
-        test.test_20230725();
+        test.kadai_20230725();
     }
 
-    class ThreadTestThread extends Thread {
-        public void run() {
-            for (int i = 0; i < 1000; i++) {
-                System.out.print('o');
+    public void kadai_20230724() {
+        try {
+            while (true) {
+                //0か1のランダム数を定義
+                Random rand = new Random();
+                int num = rand.nextInt(2);
+                //ランダム変数で1を割る, 結果を出力する
+                num = 1 / num;
+                System.out.println(num);
             }
-        }
-    }
-
-    public void kadai_20230725() {
-        //インスタンスが一意になるよう（シングルトン）、下記の属性を定義したクラスAppenderを定義
-        //①static変数（int型）
-        //②下記の処理を定義したメソッド
-        //　ア　①の変数を加算
-        //　イ　一秒待機
-        //　ウ　①の変数を出力
-        //下記の処理を記述したrunメソッドThreadをRunnableで渡す形で定義
-        //①Appenderの②のメソッドを呼び出す
-        //このメソッドの内で、Threadの処理を複数回（十回以上）実行させる
-        //（※出力される数字が自然数になるように定義）
-    }
-
-//    class RunnableTestThread implements Runnable {
-//        public void run() {
-//            for (int i = 0; i < 1000; i++) {
-//                System.out.print('o');
-//            }
-//        }
-//    }
-
-    public void test_20230725(){
-        ThreadTestThread tt = new ThreadTestThread();
-        tt.start();
-        for (int i = 0; i < 1000; i++) {
-            System.out.print('.');
-        }
-
-//        RunnableTestThread tt2 = new RunnableTestThread();
-//        Thread t = new Thread(tt);
-        Thread t = new Thread( () -> {
-            for (int i = 0; i < 1000; i++) {
-                System.out.print('o');
-            }
-        } );
-        t.start();
-
-        for (int i = 0; i < 1000; i++) {
-            System.out.print('.');
+        } catch(ArithmeticException e){
+            //（数回実行して、エラーが投げられた場合、"無限"を出力）
+            System.out.println("無限");
         }
     }
 
@@ -187,7 +153,8 @@ public class Test {
 //            cat.call();
 //        }
     }
-        public void test_20230710(){
+
+    public void test_20230710(){
         //20230710
         //クラスのインスタンスを生成してください
         //条件
