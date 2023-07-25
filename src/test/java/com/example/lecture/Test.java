@@ -31,10 +31,10 @@ public class Test {
         //　ア　①の変数を加算
         //　イ　一秒待機
         //　ウ　①の変数を出力
-        //下記の処理を記述したrunメソッドThreadをRunnableで渡す形で定義
+        //下記の処理を記述したrunメソッドThreadをRunnable（ラムダ式）で渡す形で定義
         //①Appenderの②のメソッドを呼び出す
         //このメソッドの内で、Threadの処理を複数回（十回以上）実行させる
-        //（※出力される数字が自然数になるように定義）
+        //（※出力が自然数になるように定義）
     }
 
 //    class RunnableTestThread implements Runnable {
