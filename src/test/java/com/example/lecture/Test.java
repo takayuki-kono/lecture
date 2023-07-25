@@ -8,6 +8,64 @@ import static java.lang.String.valueOf;
 
 public class Test {
 
+    public static void main(String[] args) {
+        Test test = new Test();
+////        test.test_20230710();
+//        test.test_20230719();
+//        test.kadai_20230724();
+        test.test_20230725();
+    }
+
+    class ThreadTestThread extends Thread {
+        public void run() {
+            for (int i = 0; i < 1000; i++) {
+                System.out.print('o');
+            }
+        }
+    }
+
+    public void kadai_20230725() {
+        //インスタンスが一意になるよう（シングルトン）、下記の属性を定義したクラスAppenderを定義
+        //①static変数（int型）
+        //②下記の処理を定義したメソッド
+        //　ア　①の変数を加算
+        //　イ　一秒待機
+        //　ウ　①の変数を出力
+        //下記の処理を記述したrunメソッドThreadをRunnableで渡す形で定義
+        //①Appenderの②のメソッドを呼び出す
+        //このメソッドの内で、Threadの処理を複数回（十回以上）実行させる
+        //（※出力される数字が自然数になるように定義）
+    }
+
+//    class RunnableTestThread implements Runnable {
+//        public void run() {
+//            for (int i = 0; i < 1000; i++) {
+//                System.out.print('o');
+//            }
+//        }
+//    }
+
+    public void test_20230725(){
+        ThreadTestThread tt = new ThreadTestThread();
+        tt.start();
+        for (int i = 0; i < 1000; i++) {
+            System.out.print('.');
+        }
+
+//        RunnableTestThread tt2 = new RunnableTestThread();
+//        Thread t = new Thread(tt);
+        Thread t = new Thread( () -> {
+            for (int i = 0; i < 1000; i++) {
+                System.out.print('o');
+            }
+        } );
+        t.start();
+
+        for (int i = 0; i < 1000; i++) {
+            System.out.print('.');
+        }
+    }
+
     public void kadai_20230724() {
         //0か1のランダム数を定義
         //ランダム変数で1を割る
@@ -15,14 +73,7 @@ public class Test {
     }
 
 
-    public static void main(String[] args) {
-        Test test = new Test();
-////        test.test_20230710();
-//        test.test_20230719();
-        test.kadai_20230724();
-    }
-
-    public void test_20230719(){
+        public void test_20230719(){
         String a = "b";
 //        String b = "b";
         String b = "b@";
