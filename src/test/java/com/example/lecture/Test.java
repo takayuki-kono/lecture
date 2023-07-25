@@ -8,15 +8,6 @@ import static java.lang.String.valueOf;
 
 public class Test {
 
-    public static void main(String[] args) {
-        Test test = new Test();
-//        test.test_20230710();
-//        test.test_20230719();
-//        test.kadai_20230720();
-//        test.kadai_20230724();
-        test.kadai_20230725();
-    }
-
     public void kadai_20230724() {
         try {
             while (true) {
@@ -31,6 +22,15 @@ public class Test {
             //（数回実行して、エラーが投げられた場合、"無限"を出力）
             System.out.println("無限");
         }
+    }
+
+
+    public static void main(String[] args) {
+        Test test = new Test();
+//        test.test_20230710();
+//        test.test_20230719();
+//        test.kadai_20230720();
+        test.kadai_20230724();
     }
 
     public void test_20230719(){
