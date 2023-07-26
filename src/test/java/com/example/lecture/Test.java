@@ -8,6 +8,76 @@ import static java.lang.String.valueOf;
 
 public class Test {
 
+    public static void main(String[] args) {
+        Test test = new Test();
+//        test.test_20230710();
+//        test.test_20230719();
+//        test.kadai_20230720();
+//        test.kadai_20230724();
+//        test.kadai_20230725();
+        test.kadai_20230725_2();
+    }
+
+
+    public void kadai_20230725_2() {
+        //下記の①②属性のAppenderを定義し、シングルトンとして保持
+        //①static変数定義（int型）
+        //②下記アイウの処理を含む非staticメソッド　
+        //　　ア　①の変数を加算
+        //　　イ　一秒待機
+        //　　ウ　①の変数を出力
+        //下記③④を複数回（十回以上）実行
+        //③ ②を呼び出す処理を記述したrunメソッドThreadをRunnable（ラムダ式）で渡す形で定義
+        //④このメソッドの内で、Threadの処理を実行
+        // （※出力が自然数になるように定義）
+    }
+
+//         スレッドを実行するには、Threadクラスを継承したサブクラスを用意するか、
+//         Runnableインターフェースを実装したサブクラスを用意する必要がある
+//
+//         Threadで処理する内容はサブThreadクラスのrun()メソッドに定義する(オーバーライドする)
+//         定義したスレッドを出力するにはThread.start();でメソッドを呼び出す
+
+//    ランナブルスレッド クラスの定義
+//    class RunnableTestThread implements Runnable {
+//        public void run() {
+//            for (int i = 0; i < 1000; i++) {
+//                System.out.print('o');
+//            }
+//        }
+//    }
+//    定義したRunnableクラスのインスタンスを、Threadクラスの引数としてインスタンス化して実行する
+//    Thread t1 = new Thread(new RunnableTestThread());
+//    t1.start();
+
+    class ThreadTestThread extends Thread {
+        public void run() {
+            for (int i = 0; i < 1000; i++) {
+                System.out.print('o');
+            }
+        }
+    }
+    public void test_20230725(){
+        ThreadTestThread tt = new ThreadTestThread();
+        tt.start();
+        for (int i = 0; i < 1000; i++) {
+            System.out.print('.');
+        }
+
+//        RunnableTestThread tt2 = new RunnableTestThread();
+//        Thread t = new Thread(tt);
+        Thread t = new Thread( () -> {
+            for (int i = 0; i < 1000; i++) {
+                System.out.print('o');
+            }
+        } );
+        t.start();
+
+        for (int i = 0; i < 1000; i++) {
+            System.out.print('.');
+        }
+    }
+
     public void kadai_20230724() {
         try {
             while (true) {
@@ -25,13 +95,6 @@ public class Test {
     }
 
 
-    public static void main(String[] args) {
-        Test test = new Test();
-//        test.test_20230710();
-//        test.test_20230719();
-//        test.kadai_20230720();
-        test.kadai_20230724();
-    }
 
     public void test_20230719(){
         String a = "b";
