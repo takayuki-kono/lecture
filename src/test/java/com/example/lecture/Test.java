@@ -19,13 +19,11 @@ public class Test {
     }
 
     public void kadai_20230725_2() {
-        //インスタンスを取得している
-
         //下記③④を複数回（十回以上）実行
         //③ ②を呼び出す処理を記述したrunメソッドThreadをRunnable（ラムダ式）で渡す形で定義
         //④このメソッドの内で、Threadの処理を実行
         // （※出力が自然数になるように定義）
-        for(int i=0; i<10; i=0){
+        for(int i=0; i<10; i++){
             Thread t = new Thread(() -> {
                 // シングルトンのインスタンスを参照して、
                 Appender.getAppender().count();
