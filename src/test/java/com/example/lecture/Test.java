@@ -13,7 +13,7 @@ public class Test {
 ////        test.test_20230710();
 //        test.test_20230719();
 //        test.kadai_20230724();
-        test.test_20230725();
+        test.kadai_20230725();
     }
 
     class ThreadTestThread extends Thread {
@@ -24,14 +24,17 @@ public class Test {
         }
     }
 
-    public void kadai_20230725() {
+    public void kadai_20230725_2() {
+        //下記の①②属性のAppenderを定義し、シングルトンとして保持
         //①static変数定義（int型）
-        //下記の処理を記述したrunメソッドThreadをRunnable（ラムダ式）で渡す形で定義
-        //　ア　①の変数を加算
-        //　イ　一秒待機
-        //　ウ　①の変数を出力
-        //このメソッドの内で、Threadの処理を複数回（十回以上）実行させる
-        //（※出力が自然数になるように定義）
+        //②下記アイウの処理を含む非staticメソッド　
+        //　　ア　①の変数を加算
+        //　　イ　一秒待機
+        //　　ウ　①の変数を出力
+        //下記③④を複数回（十回以上）実行
+        //③ ②を呼び出す処理を記述したrunメソッドThreadをRunnable（ラムダ式）で渡す形で定義
+        //④このメソッドの内で、Threadの処理を実行
+        // （※出力が自然数になるように定義）
     }
 
 //    class RunnableTestThread implements Runnable {
