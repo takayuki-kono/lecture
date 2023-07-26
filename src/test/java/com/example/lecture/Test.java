@@ -24,18 +24,42 @@ public class Test {
         }
     }
 
-    public void kadai_20230725_2() {
-        //下記の①②属性のAppenderを定義し、シングルトンとして保持
-        //①static変数定義（int型）
-        //②下記アイウの処理を含む非staticメソッド　
-        //　　ア　①の変数を加算
-        //　　イ　一秒待機
-        //　　ウ　①の変数を出力
+    public void kadai_20230725() {
         //下記③④を複数回（十回以上）実行
         //③ ②を呼び出す処理を記述したrunメソッドThreadをRunnable（ラムダ式）で渡す形で定義
-        //④このメソッドの内で、Threadの処理を実行
+        //④Threadの処理を実行
         // （※出力が自然数になるように定義）
+//        Appender appender = Appender.getAppender();
+        for(int i=0;i<10;i++){
+            Thread t = new Thread( () -> {
+                    Appender.getAppender().append();
+            } );
+//            Thread t = new Thread(Appender.getAppender()::append);
+            t.start();
+        }
     }
+
+//    public class Appender{
+//        static int count;
+//
+//        static com.example.lecture.Appender appender =  new Appender();
+//
+//        private Appender(){
+//        }
+//
+//        public static Appender getAppender(Test test){
+//            return appender;
+//        }
+//
+//        public synchronized void append() throws InterruptedException{
+//            count++;
+//            Thread.sleep(1000);
+//            System.out.println(count);
+//        }
+//
+//    }
+
+
 
 //    class RunnableTestThread implements Runnable {
 //        public void run() {
