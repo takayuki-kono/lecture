@@ -16,6 +16,11 @@ public class Test {
         test.kadai_20230725();
     }
 
+    public void test_20230727(){
+    }
+
+
+
     class ThreadTestThread extends Thread {
         public void run() {
             for (int i = 0; i < 1000; i++) {
