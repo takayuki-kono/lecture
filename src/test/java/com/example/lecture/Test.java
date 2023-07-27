@@ -13,7 +13,7 @@ public class Test {
 ////        test.test_20230710();
 //        test.test_20230719();
 //        test.kadai_20230724();
-        test.kadai_20230725();
+        test.kadai_20230724();
     }
 
     public void test_20230727(){
@@ -99,6 +99,7 @@ public class Test {
         //0か1のランダム数を定義
         //ランダム変数で1を割る
         //（数回実行して、エラーが投げられた場合、"無限"を出力）
+        System.out.println("無限");
     }
 
 
@@ -157,7 +158,10 @@ public class Test {
             if(l.add(m.getName())){
             }
         }
-        Map<String, Cat> catMap = new HashMap<>();
+        // 格納した順を保持しない
+//        Map<String, Cat> catMap = new HashMap<>();
+        // 格納した順を保持する
+        Map<String, Cat> catMap = new LinkedHashMap<>();
 //        catMap.put("a", new Cat("a"));
         for(Map.Entry<String, Cat> m : catMap.entrySet()){
             m.getKey();
