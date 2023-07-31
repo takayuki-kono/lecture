@@ -28,6 +28,11 @@ public class Cat implements Animal{
 
 
     }
+    /**
+     * 名前を返す。
+     * @param name 名前 color 色
+     * @return クラスのインスタンス
+     */
     public Cat(String name, String color){
         this.name = name;
         this.color = color;

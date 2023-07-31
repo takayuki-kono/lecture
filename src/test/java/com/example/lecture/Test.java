@@ -2,6 +2,8 @@ package com.example.lecture;
 
 import org.springframework.boot.SpringApplication;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.*;
 
 import static java.lang.String.valueOf;
@@ -13,10 +15,28 @@ public class Test {
 ////        test.test_20230710();
 //        test.test_20230719();
 //        test.kadai_20230724();
-        test.kadai_20230724();
+        test.test_20230731();
     }
 
-    public void test_20230727(){
+    public void kadai_20230731() {
+        //file.txtの内容を読み込み、それを別ファイルとして出力
+        //（出来れば）文字列を逆にしても出力
+    }
+
+        public void test_20230731(){
+        // try-with-resources文
+        // これによって、tryの中でのみ参照可能な、かつtryが終了したと同時にとじられるようにリソースを開く
+        try(FileInputStream in = new FileInputStream("C:\\Users\\xx03d\\IdeaProjects\\lecture\\src\\test\\java\\com\\example\\lecture\\file.txt")) {
+            //こっちはメモリリークの原因となるので、基本使用しない
+            //            FileInputStream in = new FileInputStream("C:\\Users\\xx03d\\IdeaProjects\\lecture\\src\\test\\java\\com\\example\\lecture\\file.txt");
+            int ch;
+            while ((ch = in.read()) != -1) {
+                System.out.print(Integer.toHexString(ch) + " ");
+            }
+//            in.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 
 
@@ -146,7 +166,7 @@ public class Test {
 
     public void test_20230720() {
         List<Cat> list = new ArrayList<>();
-//        list.add(new Cat("a"));
+        list.add(new Cat("a", "white"));
 //        list.add(new Cat("b"));
         List<String> o = new ArrayList<>();
         HashSet<String> l = new HashSet<>();
